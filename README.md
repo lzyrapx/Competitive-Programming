@@ -1,5 +1,5 @@
 # Competitive-algorithm
-### Source Codes for Competitive Programming
+### Source Codes For Competitive Programming
 - HDUOJ
 - POJ
 - BZOJ
