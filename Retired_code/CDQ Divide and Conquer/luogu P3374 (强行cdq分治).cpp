@@ -32,12 +32,13 @@ void cdq(int l, int r)
 {
   if(l >= r) return;
   int mid = (l + r) >> 1;
+  // 处理所有操作的前一半的修改对后一半的查询的贡献
   int sum = 0;
   for(int i = l; i <= r; i++) {
     if(q[i].pos == 0 && q[i].id <= mid) {
       sum += q[i].val;
     }
-    else if(q[i].pos > 0 && q[i].id > mid) {
+    else if(q[i].pos > 0 && q[i].id > mid) { //第二个查询操作
       ans[q[i].pos] += q[i].val * sum;
     }
   }
@@ -53,6 +54,7 @@ void cdq(int l, int r)
   for(int i = l; i <= r; i++) {
     q[i] = tmp[i];
   }
+  // 分治前一半、后一半
   cdq(l, mid);
   cdq(mid + 1, r);
 }
@@ -80,7 +82,7 @@ int main(int argc, char const *argv[]) {
       q[idx] = Query{y, tot, 1, idx};
     }
   }
-  sort(q+1,q+idx+1);
+  sort(q+1,q+idx+1); //按照 x 和操作的位置排序
   cdq(1,idx);
   for(int i = 1; i <= tot; i++) {
     std::cout << ans[i] << '\n';
