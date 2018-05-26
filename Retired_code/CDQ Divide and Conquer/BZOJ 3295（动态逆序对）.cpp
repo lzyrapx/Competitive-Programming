@@ -111,12 +111,12 @@ int main(int argc, char const *argv[]) {
     int val;
     std::cin >> val;
     id[val] = i;
-    q[++idx] = Query{++tot,id[val],val,1,0}; //pos,x,y,type,id;
+    q[++idx] = Query{++tot,id[val],val,1,0}; //pos,x,y,op,id;
   }
   for(int i = 1; i <= m; i++) {
     int val; // 每次删除的一个元素
     std::cin >> val;
-    q[++idx] = Query(++tot,id[val],val,-1,i); //pos,x,y,type,id;
+    q[++idx] = Query(++tot,id[val],val,-1,i); //pos,x,y,op,id;
   }
   sort(q + 1, q + idx + 1);
   cdq(1,idx);
