@@ -8,7 +8,7 @@ const int mod = 10007;
 
 // https://www.lydsy.com/JudgeOnline/problem.php?id=1030
 
-// 给定 n个模板串，求出至少包含1个模板串的长度为 m的串的个数。
+// 给定 n个模板串，求出至少包含1个模板串的长度为 m 的串的个数。
 // 只可能包含英文大写字母A ~ Z
 
 int End[maxn];
