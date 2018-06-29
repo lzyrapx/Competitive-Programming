@@ -1,5 +1,3 @@
-链接：https://www.nowcoder.com/questionTerminal/ff05d44dfdb04e1d83bdbdab320efbcb
-来源：牛客网
 
 class Solution {
 public:
