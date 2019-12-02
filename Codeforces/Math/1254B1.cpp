@@ -12,38 +12,34 @@
 using namespace std;
 typedef long long ll;
 
-const int maxn = 1e5 + 123;
+const int maxn = 1e6 + 123;
 // k > 1
-int a[maxn];
+ll a[maxn];
+ll sum[maxn];
 vector<int>ve;
 
-ll cost(int k) {
+int n;
+ll cost(ll k) {
     ll ans = 0;
-    for(int i = 0; i < ve.size(); i += k) {
-        int median = ve[i + (k - 1) / 2];
-        for(int j = i; j < i + k; j++) {
-            ans += abs(ve[j] - median);
-        }
+    for(int i = 1; i <= n; i++) {
+        ans += min(sum[i] % k, k - sum[i] % k);
     }
     return ans;
 }
 int main(int argc, char const *argv[])
 {
-    int n;
-    cin >> n;
-    for(int i = 0; i < n; i++) {
-        cin >> a[i];
-        if(a[i] == 1) {
-            ve.push_back(i);
-        }
+    scanf("%d", &n);
+    for(int i = 1; i <= n; i++) {
+        scanf("%lld", &a[i]);
+        sum[i] = sum[i - 1] + a[i];
     }
-    if(ve.size() == 1) {
-        cout << -1 << endl;
+    if(sum[n] == 1) {
+        printf("-1\n");
         return 0;
     }
     ll ans = 1e18;
-    int tmp = ve.size();
-    int k = 2;
+    ll tmp = sum[n];
+    ll k = 2;
     while(k * k <= tmp) {
         if(tmp % k == 0) {
             ans = min(ans, cost(k));
@@ -56,6 +52,6 @@ int main(int argc, char const *argv[])
     if(tmp > 1) {
         ans = min(ans, cost(tmp));
     }
-    cout << ans << endl;
+    printf("%lld\n", ans);
     return 0;
 }
