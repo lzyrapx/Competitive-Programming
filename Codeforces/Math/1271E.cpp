@@ -22,15 +22,17 @@ int main() {
     while((1LL << a) <= k) a++;
     a--;
 
+    // for odd x
     ll y = k - (1LL << a);
     ll x = (n - y) / (1LL << a);
-    if(x % 2 == 0) x--;
+    if(x % 2 == 0) x--; // turn to odd
     ans = max(ans, x);
 
+    // for even x
     if(k == (1LL << (a + 1)) - 1) a++;
     y = k - ((1LL << a) - 1);
     x = (n - y) / (1LL << (a - 1));
-    if(x % 2 == 1) x--;
+    if(x % 2 == 1) x--; // turn to even
     ans = max(ans ,x);
 
     cout << ans << endl;
