@@ -32,8 +32,8 @@ int main() {
         cnt[freq[a[i]]]++;
     }
     sort(a.begin(), a.end(), [&](int x, int y) -> bool {
-        // 先比较 freq[x] x
-        // 再比较 freq[y] y
+        // 先比较 freq[x] freq[y]
+        // 再比较 x y
         return tie(freq[x], x) > tie(freq[y], y);
     });
     int sum = 0;
