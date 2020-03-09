@@ -30,7 +30,7 @@ public:
             }
         }
         for(int j = 0; j < A[0].size(); j++) {
-            cout << dp[A.size() - 1][j] << endl;
+            // cout << dp[A.size() - 1][j] << endl;
             ans = min(ans, dp[A.size() - 1][j]);
         }
         return ans;
