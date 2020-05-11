@@ -22,8 +22,8 @@ public:
             for(int j = i + 1; j < n; j++) {
                 a = nums[i];
                 b = nums[j];
-                
-                nums[j] = nums[n - 1];
+
+                nums[j] = nums[n - 1]; // num[j] 被消掉了，用最后的指替换当前 num[j]的位置...
                 
                 nums[i] = a + b;
                 if(dfs(nums, n - 1)) return true;
