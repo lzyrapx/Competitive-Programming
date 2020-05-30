@@ -20,6 +20,7 @@
         "queue": "cpp",
         "stack": "cpp",
         "utility": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "iosfwd": "cpp"
     }
 }
