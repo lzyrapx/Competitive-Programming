@@ -27,7 +27,7 @@ public:
             for(int j = 1; len - i - j >= max(i, j); j++) {
                 string second = num.substr(i, j);
                 if(j > 1 && second[0] == '0') continue;
-                if(dfs(first, second, i + j, anum)) {
+                if(dfs(first, second, i + j, num)) {
                     return true;
                 }
             }
