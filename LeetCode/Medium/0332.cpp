@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // 类似欧拉路径
     vector<string> findItinerary(vector<vector<string>>& tickets) {
         int n = tickets.size();
         unordered_map<string, priority_queue<string, vector<string>, std::greater<string>>> graph;
