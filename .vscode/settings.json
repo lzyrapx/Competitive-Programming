@@ -21,6 +21,8 @@
         "stack": "cpp",
         "utility": "cpp",
         "tuple": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "__locale": "cpp",
+        "ios": "cpp"
     }
 }
