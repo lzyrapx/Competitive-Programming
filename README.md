@@ -1,7 +1,5 @@
 # Competitive-Programming
 
-## Source Codes For Competitive Programming
-
 - Codeforces
 - AtCoder
 - TopCoder
